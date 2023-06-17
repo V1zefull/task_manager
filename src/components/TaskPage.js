@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import TaskList from "./TaskList";
+import TaskStatus from "./TaskStatus";
 
-const TASK_STATUSES = ["Planned", "In Progress", "Completed"]
+const TASK_STATUSES = ["To-Do", "In Progress", "Completed"]
 
 const TaskPage = (props) => {
     const [cardForm, showCardForm] = useState(false);
@@ -48,6 +49,18 @@ const TaskPage = (props) => {
         })
     }
 
+    const renderTaskStatus = () => {
+        const {tasks} = props;
+        return TASK_STATUSES.map((status, id) => {
+            const statusTasks = tasks.filter(task => task.status === status)
+            return(
+                <div key={id} className="taskCard" style={{background:"#FFDCBC"}}>
+                    <TaskStatus key={status} status={status} tasks={statusTasks} onStatusChange={props.onStatusChange} onRemoveTask={props.onRemoveTask}/>
+                </div>
+            );
+        })
+    }
+
     return (
         <div className="container">
             <div className="headerContainer">
@@ -72,6 +85,9 @@ const TaskPage = (props) => {
                         </form>
                     </div>
                 }
+            </div>
+            <div className="taskListContainer">
+                {renderTaskStatus()}
             </div>
             <div className="taskListContainer">
                 {renderTaskLists()}
