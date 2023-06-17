@@ -16,16 +16,19 @@ const Task = (props) => {
 
     return (
         <>
-            <form onChange={onStatusChange}>
-                <select defaultValue={props.task.status}>
-                    {TASK_STATUSES.map(status => (
-                        <option value={status} key={status}>{status}</option>
-                    ))}
-                </select>
-            </form>
-            <h2 className="card-title mt-3 text-uppercase px-2">{props.task.title}</h2>
-            <p className="card-text mb-3 text-muted font-weight-bold px-2">{props.task.description}</p>
-            <FontAwesomeIcon icon={faTrash} className="float-end p-2" style={{color: "#d76565", cursor:"pointer"}} onClick={() => onRemoveTask(props.task.id)}/>
+
+            <div className="card">
+                <form onChange={onStatusChange}>
+                    <select defaultValue={props.task.status}>
+                        {TASK_STATUSES.map(status => (
+                            <option value={status} key={status}>{status}</option>
+                        ))}
+                    </select>
+                </form>
+                <h2 className="cardTitle">{props.task.title}</h2>
+                <p className="cardText">{props.task.description}</p>
+                <FontAwesomeIcon icon={faTrash} className="trashIcon" style={{color: "#d76565", cursor:"pointer"}} onClick={() => onRemoveTask(props.task.id)}/>
+            </div>
         </>
     );
 };

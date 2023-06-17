@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
-import "bootstrap/dist/css/bootstrap.min.css";
 import TaskPage from "./components/TaskPage";
 import {createTask, editTask, removeTask} from "./actions";
+import "./css/index.css"
 
 function App(props) {
 

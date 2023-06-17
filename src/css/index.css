@@ -1,0 +1,130 @@
+.container{
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.headerContainer{
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px 0 25px;
+    background: #FFE9B8;
+    border-radius: 25px;
+}
+
+.navBtn{
+    background: #A9EBB8;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    color: black;
+    transition: 500ms;
+}
+
+.navBtn:hover{
+    background: #53da70;
+    border-radius: 15px;
+}
+
+.createForm{
+    width: 1300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.createFormContainer{
+    width: 400px;
+    padding: 0 25px 20px 25px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 25px;
+    background: #ffdcb8;
+}
+
+.taskInput{
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.taskInputDesc{
+    width: 400px;
+    height: 70px;
+    border: none;
+    resize: none;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.subBtn{
+    background: #A9EBB8;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    transition: 500ms;
+}
+
+.taskListContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 5px 5px 5px 5px;
+}
+
+.taskCard{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    margin: 15px 10px 0 15px;
+    padding: 10px 0 10px 0;
+}
+
+.cardTitle{
+    width: 90%;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    margin-top: 5px;
+    border-bottom: solid;
+}
+
+.card{
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cardText{
+    width: 90%;
+    word-wrap: break-word;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.trashIcon{
+    align-self: flex-end;
+    margin: 0 15px 10px 0;
+}
+
+.cardHeader{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+
+}

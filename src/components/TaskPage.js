@@ -40,7 +40,7 @@ const TaskPage = (props) => {
         return TASK_STATUSES.map((status, id) => {
             const statusTasks = tasks.filter(task => task.status === status)
             return(
-                <div key={id} className="col-md-3 card m-2 p-0 text-center" style={{background:"#FFDCBC"}}>
+                <div key={id} className="taskCard" style={{background:"#FFDCBC"}}>
                     <TaskList key={status} status={status} tasks={statusTasks} onStatusChange={props.onStatusChange} onRemoveTask={props.onRemoveTask}/>
                 </div>
             );
@@ -49,32 +49,31 @@ const TaskPage = (props) => {
     }
 
     return (
-        <div className="container my-5">
-            <div className="jumbotron py-3">
-                <div className="row rounded-pill" style={{background: "#FFE9B8"}}>
-                    <div className="col-md-2">
-                        <button className="btn btn-success m-3" onClick={formToggle} style={{background:"#A9EBB8", border:"none", color:"black"}}>Add</button>
-                    </div>
-                    <div className="col-md-8">
-                        <h2 className="display-4 text-center text-uppercase">
-                            Task Manager
-                        </h2>
-                    </div>
+        <div className="container">
+            <div className="headerContainer">
+                <div className="navBar">
+                    <button className="navBtn" onClick={formToggle}>Add</button>
+                    <h2>Task Manager</h2>
                 </div>
                 {/*Inputs Form*/}
-                {cardForm && (
-                    <form onSubmit={onCreateTask}>
-                        <div className="form-group m-3">
-                            <input type="text" className="form-control" placeholder="Title" onChange={onChangeTitle}/>
-                        </div>
-                        <div className="form-group m-3">
-                            <textarea type="text" className="form-control" placeholder="Description" onChange={onChangeDescription}/>
-                        </div>
-                        <button type="submit" className="btn btn-primary m-3" style={{background: "#A3D6E0"}}>Submit</button>
-                    </form>
-                )}
+                {cardForm &&
+                    <div className="createForm">
+                        <form onSubmit={onCreateTask} className="createFormContainer">
+                            <h2>Create task</h2>
+                            <div>
+                                <h3>Title</h3>
+                                <input type="text" className="taskInput" onChange={onChangeTitle}/>
+                            </div>
+                            <h3>Description</h3>
+                            <div className="taskInput">
+                                <textarea className="taskInputDesc" onChange={onChangeDescription}/>
+                            </div>
+                            <button type="submit"  className="subBtn">Submit</button>
+                        </form>
+                    </div>
+                }
             </div>
-            <div className="d-flex justify-content-center position-relative m-3">
+            <div className="taskListContainer">
                 {renderTaskLists()}
             </div>
         </div>
