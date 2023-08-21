@@ -16,7 +16,6 @@ const Task = (props) => {
 
     return (
         <>
-
             <div className="card">
                 <form onChange={onStatusChange}>
                     <select defaultValue={props.task.status}>
